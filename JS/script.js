@@ -1,130 +1,124 @@
-// ДЗ
-/* Задача 1
-const numbers = {
-    keyin1: 1,
-    keyin2: 2,
-    keyin3: 3,
-    keyin4: 4,
-    keyin5: 5,
-    keyin6: 6,
-    keyin7: 7,
-}
-for (const key in numbers) {
-    if (numbers[key] >= 3) {
-        console.log(numbers[key]);
-    }
-}
-*/
-
-/* Задача 2
-const post = {
-    author: "John", // вывести этот текст
-    postId: 23,
-    comments: [ {
-        userId: 10,
-        userName: "Alex",
-        text: "lorem ipsum",
-        rating: {
-            likes: 10,
-            dislikes: 2, // вывести это число
-            },
-        }, 
-        
+const dataProductsItems = `
+    [
         {
-            userId: 5, // вывести это число
-            userName: "Jane",
-            text: "lorem ipsum 2", // вывести этот текст
-            rating: {
-                likes: 3,
-                dislikes: 1,
-            },
+            "name": "ELLERY X M'O CAPSULE",
+            "url": "./image/card_1.png",
+            "infoText": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            "price": "$52"
         },
-    ],
-};
-console.log(post['author']);
-// console.log(post.author)
-console.log(post.comments[0].rating.dislikes)
-console.log(post.comments[1].userId)
-console.log(post.comments[1].text)
 
-// for (const arr of post.comments) {
-//     console.log(`${arr.userId}, ${arr.text}`);
-//     // for (const key in arr.rating) {
-//     //     console.log(key);
-//     // }
-//     console.log(arr['rating']);
-// }
-*/
+        {
+            "name": "ELLERY X M'O CAPSULE",
+            "url": "./image/card_2.png",
+            "infoText": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            "price": "$52"
+        },
 
-/* Задача 3
-const products = [
-    {
-    id: 3,
-    price: 200,
-    },
-    {
-    id: 4,
-    price: 900,
-    },
-    {
-    id: 1,
-    price: 1000,
-    },
-];
-let reducePrice = 0
-products.forEach(element => {
-    reducePrice = element['price'] - (element['price'] * 0.15)
-    console.log(reducePrice)
+        {
+            "name": "ELLERY X M'O CAPSULE",
+            "url": "./image/card_3.png",
+            "infoText": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            "price": "$52"
+        },
+
+        {
+            "name": "ELLERY X M'O CAPSULE",
+            "url": "./image/card_4.png",
+            "infoText": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            "price": "$52"
+        },
+
+        {
+            "name": "ELLERY X M'O CAPSULE",
+            "url": "./image/card_5.png",
+            "infoText": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            "price": "$52"
+        },
+
+        {
+            "name": "ELLERY X M'O CAPSULE",
+            "url": "./image/card_6.png",
+            "infoText": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            "price": "$52"
+        }
+    ]
+`
+
+const dataItemCards = JSON.parse(dataProductsItems);
+
+const productBox = document.querySelector('.product-items');
+
+const productItemCards = document.querySelector('.product-items__cards');
+const itemButtonElem = document.querySelector('.product-items__button');
+const deleteItemElem = document.createElement('button');
+deleteItemElem.classList.add('product-items__delete');
+deleteItemElem.textContent = 'Delete All Product';
+
+itemButtonElem.addEventListener('click', function () {
+    dataItemCards.forEach(element => {
+        const itemCard = document.createElement('div');
+        itemCard.classList.add('product-items__cards_card');
+    
+        const itemCardImg = document.createElement('img');
+        itemCard.classList.add('product-items__cards_card_img');
+        itemCardImg.src = element.url;
+    
+        const itemCardText = document.createElement('div');
+        itemCardText.classList.add('product-items__cards_card_text');
+    
+        const itemCardTextName = document.createElement('h1');
+        itemCardTextName.classList.add('product-items__cards_card_text_h1');
+        itemCardTextName.textContent = element.name;
+    
+        const itemCardTextInfo = document.createElement('h1');
+        itemCardTextInfo.classList.add('product-items__cards_card_text_p');
+        itemCardTextInfo.textContent = element.infoText;
+    
+        const itemCardTextPrice = document.createElement('h2');
+        itemCardTextPrice.classList.add('product-items__cards_card_text_price');
+        itemCardTextPrice.textContent = element.price;
+
+    
+        productItemCards.appendChild(itemCard);
+        itemCard.appendChild(itemCardImg);
+        itemCard.appendChild(itemCardText);
+        itemCardText.appendChild(itemCardTextName);
+        itemCardText.appendChild(itemCardTextInfo);
+        itemCardText.appendChild(itemCardTextPrice);
+    });
+
+    itemButtonElem.remove();
+    productBox.appendChild(deleteItemElem);
 });
-*/
 
-/* Задача 4
-const products = [
-    {
-    id: 3,
-    price: 127,
-    photos: ["1.jpg", "2.jpg",],
-    },
+deleteItemElem.addEventListener('click', function () {
+    dataItemCards.forEach(element => {
+        const itemCard = document.createElement('div');
+        itemCard.classList.add('product-items__cards_card');
+    
+        const itemCardImg = document.createElement('img');
+        itemCard.classList.add('product-items__cards_card_img');
+        itemCardImg.src = element.url;
+    
+        const itemCardText = document.createElement('div');
+        itemCardText.classList.add('product-items__cards_card_text');
+    
+        const itemCardTextName = document.createElement('h1');
+        itemCardTextName.classList.add('product-items__cards_card_text_h1');
+        itemCardTextName.textContent = element.name;
+    
+        const itemCardTextInfo = document.createElement('h1');
+        itemCardTextInfo.classList.add('product-items__cards_card_text_p');
+        itemCardTextInfo.textContent = element.infoText;
+    
+        const itemCardTextPrice = document.createElement('h2');
+        itemCardTextPrice.classList.add('product-items__cards_card_text_price');
+        itemCardTextPrice.textContent = element.price;
 
-    {
-    id: 5,
-    price: 499,
-    photos: [],
-    },
+    
+        productItemCards.remove(itemCard);
+    });
 
-    {
-    id: 10,
-    price: 26,
-    photos: ["3.jpg",],
-    },
-
-    {
-    id: 8,
-    price: 78,
-    },
-];
-
-// // a)
-// let arrFilter = products.filter(elem => elem != products[3]);
-// console.log(arrFilter);
-
-// // b)
-// const compProducts = (a,b) => {
-//     return a.price - b.price
-// };
-// products.sort(compProducts).forEach((elem) => console.log(elem));
-*/
-
-/* Задача 5
-const en = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-const ru = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"];
-
-const obj = {};
-
-if (en.length === ru.length) {
-    for (let i = 0; i < en.length; i++) {
-        obj[en[i]] = ru[i]
-    }
-}
-console.log(obj);
-*/
+    deleteItemElem.remove();
+    productBox.appendChild(itemButtonElem);
+});

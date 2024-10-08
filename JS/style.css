@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.product-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.product-items__textH {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.product-items__textH_h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  color: rgb(34, 34, 34);
+}
+.product-items__textH_p {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: rgb(159, 159, 159);
+}
+.product-items__cards {
+  display: grid;
+  gap: 20px;
+  grid-template: repeat(2, 1fr)/repeat(3, 1fr);
+}
+.product-items__cards_card {
+  background: rgb(248, 248, 248);
+}
+.product-items__cards_card_text {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.product-items__cards_card_text_h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15.6px;
+  text-align: left;
+  color: rgb(0, 0, 0);
+}
+.product-items__cards_card_text_p {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16.8px;
+  text-align: left;
+  color: rgb(93, 93, 93);
+}
+.product-items__cards_card_text_price {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+  color: rgb(241, 109, 127);
+}
+.product-items__button {
+  width: 212px;
+  height: 48px;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: center;
+  color: rgb(242, 99, 118);
+  border: 1px solid rgb(255, 106, 106);
+  background-color: aliceblue;
+}
+.product-items__button:hover {
+  cursor: pointer;
+  background-color: rgb(208, 246, 15);
+  color: black;
+  border: 1px solid black;
+}
+.product-items__delete {
+  width: 212px;
+  height: 48px;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: center;
+  color: rgb(242, 99, 118);
+  border: 1px solid rgb(255, 106, 106);
+  background-color: aliceblue;
+}
+.product-items__delete:hover {
+  cursor: pointer;
+  background-color: rgb(208, 246, 15);
+  color: black;
+  border: 1px solid black;
+}/*# sourceMappingURL=style.css.map */
